@@ -1,0 +1,31 @@
+ssh u0_a601@192.168.0.117 -p 8022
+ssh u0_a186@192.168.0.119 -p 8022
+ssh u0_a3@192.168.0.100 -p 8022
+
+termux-change-repo
+
+pkg install proot-distro
+proot-distro login debian
+
+ollama serve
+ollama run gemma:2b
+
+cp /sdcard/Android/authorized_keys /data/data/com.termux/files/home/.ssh
+
+cp /data/data/com.termux/files/usr/bin/adb /data/data/com.termux/files/usr/lib/python3.11/site-packages/airtest/core/android/static/adb/linux/
+
+
+adb connect 192.168.
+python /sdcard/Android/test.py
+python /sdcard/Android/qwtest2.py
+
+
+curl http://localhost:11434/api/chat -d '{   "model": "gemma:2b",   "messages": [     { "role": "user", "content": "你好" }   ] }'
+curl http://192.168.0.126:11434/api/chat -d '{   "model": "gemma:2b",   "messages": [     { "role": "user", "content": "你好" }   ] }'
+curl http://192.168.0.126:11434/api/generate -d '{   "model": "gemma:2b",   "messages": [     { "role": "user", "content": "你好" }   ] }'
+
+
+find / -name ollama.servic
+
+
+你现在是一个Android手机助手，同时也是一个语言解析器，我为你增加了可以操控手机的组件，我需要你来为我拆分指令，比如，用户可能会说“打开微信”，我需要将这个指令解析成动作“打开”和目标“微信”，要以json形式展示，这样的话，我就能根据用户的指令执行相应的操作。在这期间你还要和我聊天，但是聊天内容和指令解析要分开展示
